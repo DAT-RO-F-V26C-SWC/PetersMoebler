@@ -43,11 +43,11 @@ namespace PetersMoeblerLib.model
             get { return _name; } 
             set 
             {
-                if (string.IsNullOrWhiteSpace(value) || value.Length < 7)
+                if (string.IsNullOrWhiteSpace(value) || value.Trim().Length < 7)
                 {
                     throw new ArgumentException("Produkt navn skal være mindst 7 tegn langt");
                 }
-                _name = value; } 
+                _name = value.Trim(); } 
         }
         public int Price
         { 
